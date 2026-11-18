@@ -137,4 +137,34 @@ All colors MUST be HSL.
   .animate-scale-in {
     animation: scaleIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
+
+  @keyframes slideFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100px) scale(0.96);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  @keyframes slideFromRight {
+    0% {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-from-left {
+    animation: slideFromLeft 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .animate-slide-from-right {
+    animation: slideFromRight 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
 }
