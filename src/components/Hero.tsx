@@ -15,69 +15,37 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e24300f_1px,transparent_1px),linear-gradient(to_bottom,#1e24300f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
-        {/* Left Column: Authoritative Editorial Introduction */}
+        {/* Left Column: Clean, Airy & Punchy Introduction */}
         <div className="lg:col-span-7 space-y-0">
-          {/* Engineering Status Bar */}
+          {/* Subtle Category Marker */}
           <div
-            className="animate-reveal-up inline-flex items-center gap-3 px-3 py-1.5 rounded-md bg-secondary/60 border border-border text-xs font-mono text-muted-foreground mb-6"
+            className="animate-reveal-up text-xs font-mono text-primary font-medium tracking-wider uppercase mb-3 flex items-center gap-2"
             style={{ animationDelay: "80ms" }}
           >
-            <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
-            </span>
-            <span className="text-foreground font-medium">B.E. IT &bull; Class of 2027</span>
-            <span className="text-border">|</span>
-            <span className="text-primary font-medium">Available for SWE Roles</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+            <span>Software Engineer &bull; Backend &amp; AI</span>
           </div>
 
           {/* Primary Name Display */}
           <h1
-            className="animate-reveal-up text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.08] mb-4"
+            className="animate-reveal-up text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.05] mb-5"
             style={{ animationDelay: "180ms" }}
           >
             Siddhant Kale
           </h1>
 
-          {/* Role Specification */}
+          {/* Focused, Crisp 1-Line Proposition (No text clutter) */}
           <p
-            className="animate-reveal-up text-base sm:text-lg md:text-xl font-mono text-primary font-medium tracking-tight mb-5"
+            className="animate-reveal-up text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-lg mb-8 font-sans"
             style={{ animationDelay: "280ms" }}
           >
-            Software Engineer &bull; Backend Systems &bull; AI / Computer Vision
+            Architecting scalable backend microservices, real-time Linux telemetry pipelines, and applied computer vision systems.
           </p>
-
-          {/* Core Biography / Executive Summary */}
-          <p
-            className="animate-reveal-up text-muted-foreground text-sm sm:text-base leading-relaxed mb-6 max-w-xl"
-            style={{ animationDelay: "380ms" }}
-          >
-            Final-year Information Technology student at <span className="text-foreground font-medium">Vidyavardhini College of Engineering, Mumbai University</span> (CGPA 7.17). Hands-on experience architecting distributed backends, endpoint telemetry pipelines, and computer vision diagnostic systems using <span className="text-foreground font-medium">Python, FastAPI, React, OpenCV, and AWS</span>.
-          </p>
-
-          {/* Direct Technical Endpoints */}
-          <div
-            className="animate-reveal-up flex flex-wrap items-center gap-y-2 gap-x-6 mb-8 text-xs sm:text-sm font-mono text-muted-foreground"
-            style={{ animationDelay: "480ms" }}
-          >
-            <div className="flex items-center gap-2">
-              <MapPin className="w-3.5 h-3.5 text-primary" />
-              <span>Mumbai, India</span>
-            </div>
-            <a href="tel:+918108901398" className="flex items-center gap-2 hover:text-foreground transition-colors">
-              <Phone className="w-3.5 h-3.5 text-primary" />
-              <span>+91 8108901398</span>
-            </a>
-            <a href="mailto:siddhantkalework@gmail.com" className="flex items-center gap-2 hover:text-foreground transition-colors">
-              <Mail className="w-3.5 h-3.5 text-primary" />
-              <span>siddhantkalework@gmail.com</span>
-            </a>
-          </div>
 
           {/* Action CTAs */}
           <div
             className="animate-reveal-up flex flex-wrap items-center gap-3"
-            style={{ animationDelay: "580ms" }}
+            style={{ animationDelay: "380ms" }}
           >
             <a
               href="/Siddhant_Kale_Resume.pdf"
@@ -85,7 +53,7 @@ export const Hero = () => {
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 shadow-sm transition-all"
             >
               <FileDown className="w-4 h-4" />
-              Download Resume (PDF)
+              Download Resume
             </a>
 
             <Button
@@ -94,7 +62,7 @@ export const Hero = () => {
               className="rounded-lg border-border bg-card/80 hover:bg-secondary hover:text-foreground text-foreground text-sm font-medium transition-all"
               onClick={() => scrollToSection("projects")}
             >
-              View Projects
+              Explore Projects
               <ArrowRight className="w-4 h-4 ml-1.5 text-primary" />
             </Button>
 
@@ -122,7 +90,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Right Column: Memorable Flagship Interactive Terminal */}
+        {/* Right Column: Interactive Terminal */}
         <div className="lg:col-span-5 flex justify-center">
           <div
             className="animate-scale-in w-full max-w-lg bg-card border border-border rounded-xl shadow-xl shadow-black/30 overflow-hidden font-mono text-xs"
@@ -243,6 +211,39 @@ export const Hero = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Distributed Engineering Highlights Ribbon */}
+      <div
+        className="max-w-7xl mx-auto w-full mt-14 pt-8 border-t border-border/40 grid grid-cols-2 md:grid-cols-4 gap-6 font-mono text-xs text-muted-foreground animate-reveal-up"
+        style={{ animationDelay: "450ms" }}
+      >
+        <div className="space-y-1">
+          <span className="text-[11px] text-primary uppercase tracking-wider block">// DEGREE &amp; STANDING</span>
+          <p className="text-foreground font-semibold">B.E. IT &bull; 7.17 CGPA</p>
+          <p className="text-[11px] text-muted-foreground">VCET, Mumbai University ('27)</p>
+        </div>
+
+        <div className="space-y-1">
+          <span className="text-[11px] text-primary uppercase tracking-wider block">// CORE SPECIALTY</span>
+          <p className="text-foreground font-semibold">Python &bull; FastAPI &bull; React</p>
+          <p className="text-[11px] text-muted-foreground">AWS, OpenCV, Linux Telemetry</p>
+        </div>
+
+        <div className="space-y-1">
+          <span className="text-[11px] text-primary uppercase tracking-wider block">// BUILT SYSTEMS</span>
+          <p className="text-foreground font-semibold">4 Production Architectures</p>
+          <p className="text-[11px] text-muted-foreground">SIEM, MRI CNN, OpenCV, Split-It</p>
+        </div>
+
+        <div className="space-y-1">
+          <span className="text-[11px] text-primary uppercase tracking-wider block">// ROLE STATUS</span>
+          <p className="text-emerald-400 font-semibold flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            Interviewing for SWE Roles
+          </p>
+          <p className="text-[11px] text-muted-foreground">Full-time &bull; Mumbai / Remote</p>
         </div>
       </div>
     </section>
