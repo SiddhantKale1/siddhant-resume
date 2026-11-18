@@ -1,23 +1,7 @@
-import { useEffect, useState } from "react";
 import { Download, ArrowRight, Mail, Github, Linkedin } from "lucide-react";
 import { SquircleGrid } from "./SquircleGrid";
 
 export const Hero = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const { innerWidth, innerHeight } = window;
-      setMousePosition({
-        x: (e.clientX / innerWidth - 0.5) * 15,
-        y: (e.clientY / innerHeight - 0.5) * 15,
-      });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -39,14 +23,14 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen bg-[#08080A] text-white flex flex-col justify-between overflow-hidden pt-24 sm:pt-28 pb-6">
-      {/* Background squircle grid with rich red ambient glow behind the subject */}
+      {/* Background squircle grid with rich ambient backlight */}
       <SquircleGrid glowPosition="right" />
 
       {/* Main Hero Content */}
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 w-full flex-1 flex items-end relative z-10">
         <div className="grid lg:grid-cols-12 gap-8 items-end w-full pb-4">
           {/* Left Column: Headline, Bio & Action Buttons */}
-          <div className="lg:col-span-7 xl:col-span-6 space-y-6 sm:space-y-7 pb-8 lg:pb-12">
+          <div className="lg:col-span-7 xl:col-span-6 space-y-6 sm:space-y-7 pb-8 lg:pb-12 relative z-20">
             {/* Bold Hero Headline - Staggered Kinetic Blur Reveal */}
             <h1 className="text-4xl sm:text-5xl lg:text-[46px] xl:text-[54px] font-normal tracking-[-0.03em] text-white leading-[1.12]">
               <span className="block animate-blur-reveal [animation-delay:120ms]">
@@ -85,19 +69,101 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Right Column: Hero Portrait with White Contour Outline - Big and grounded */}
+          {/* Right Column: Hero Portrait with Subtle, Tasteful Celestial God Rays */}
           <div className="lg:col-span-5 xl:col-span-6 relative flex items-end justify-center lg:justify-end">
-            <div
-              className="animate-blur-reveal [animation-delay:280ms] relative w-full max-w-[560px] sm:max-w-[640px] lg:max-w-[760px] xl:max-w-[820px] transition-transform duration-500 ease-out flex justify-center lg:justify-end lg:translate-x-8 xl:translate-x-12"
-              style={{
-                transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
-              }}
-            >
+            <div className="animate-blur-reveal [animation-delay:280ms] relative w-full max-w-[560px] sm:max-w-[640px] lg:max-w-[760px] xl:max-w-[820px] flex justify-center lg:justify-end lg:translate-x-8 xl:translate-x-12">
+              
+              {/* ======================================================== */}
+              {/* COMPACT PURE WHITE LIGHT RAYS (Behind Back at Chest Level) */}
+              {/* ======================================================== */}
+              <div className="absolute top-[46%] left-[53%] -translate-x-1/2 -translate-y-1/2 w-[560px] sm:w-[680px] h-[560px] sm:h-[680px] pointer-events-none select-none z-0 flex items-center justify-center">
+                
+                {/* 1. Soft Pure White Ambient Backlight */}
+                <div className="absolute w-[380px] sm:w-[460px] h-[380px] sm:h-[460px] rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.18)_0%,rgba(255,255,255,0.06)_40%,transparent_70%)] blur-[55px]" />
+
+                {/* 2. Secondary Translucent White Rays (Counter-Rotating) */}
+                <div 
+                  className="absolute w-[540px] sm:w-[660px] h-[540px] sm:h-[660px] rounded-full animate-spin-reverse-slow opacity-25"
+                  style={{
+                    background: `repeating-conic-gradient(
+                      from 20deg at 50% 50%,
+                      rgba(255, 255, 255, 0.22) 0deg 8deg,
+                      transparent 8deg 24deg,
+                      rgba(255, 255, 255, 0.14) 24deg 38deg,
+                      transparent 38deg 52deg,
+                      rgba(255, 255, 255, 0.20) 52deg 62deg,
+                      transparent 62deg 78deg
+                    )`,
+                    maskImage: "radial-gradient(circle at center, black 15%, rgba(0,0,0,0.7) 38%, transparent 62%)",
+                    WebkitMaskImage: "radial-gradient(circle at center, black 15%, rgba(0,0,0,0.7) 38%, transparent 62%)",
+                    filter: "blur(12px)",
+                  }}
+                />
+
+                {/* 3. Primary Compact White God Rays (Rotating) */}
+                <div 
+                  className="absolute w-[520px] sm:w-[640px] h-[520px] sm:h-[640px] rounded-full animate-spin-slow opacity-30"
+                  style={{
+                    background: `repeating-conic-gradient(
+                      from 0deg at 50% 50%,
+                      rgba(255, 255, 255, 0.32) 0deg 4deg,
+                      transparent 4deg 16deg,
+                      rgba(255, 255, 255, 0.22) 16deg 24deg,
+                      transparent 24deg 38deg,
+                      rgba(255, 255, 255, 0.28) 38deg 46deg,
+                      transparent 46deg 60deg,
+                      rgba(255, 255, 255, 0.24) 60deg 68deg,
+                      transparent 68deg 82deg
+                    )`,
+                    maskImage: "radial-gradient(circle at center, black 15%, rgba(0,0,0,0.8) 35%, transparent 60%)",
+                    WebkitMaskImage: "radial-gradient(circle at center, black 15%, rgba(0,0,0,0.8) 35%, transparent 60%)",
+                    filter: "blur(7px)",
+                  }}
+                />
+
+                {/* 4. Crisp White Light Core at Chest Level */}
+                <div 
+                  className="absolute w-[180px] sm:w-[220px] h-[180px] sm:h-[220px] rounded-full"
+                  style={{
+                    background: "radial-gradient(circle at center, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.22) 32%, transparent 70%)",
+                    filter: "blur(22px)",
+                  }}
+                />
+              </div>
+
+              {/* The Backlit Portrait - Crisp White Rim Lighting */}
               <img
                 src="/sidd_hero.png"
                 alt="Siddhant Kale — Software Engineer"
-                className="w-full h-auto object-contain object-bottom max-h-[780px] xl:max-h-[860px] select-none pointer-events-none"
+                className="w-full h-auto object-contain object-bottom max-h-[780px] xl:max-h-[860px] select-none pointer-events-none relative z-10"
+                style={{
+                  filter: "drop-shadow(0 0 22px rgba(255, 255, 255, 0.22))",
+                }}
               />
+
+              {/* Luminous Silhouette Contour Shimmer: Pure White Light Gleam */}
+              <div
+                className="absolute inset-0 pointer-events-none select-none overflow-hidden z-20"
+                style={{
+                  maskImage: "url(/sidd_rim_stroke.png)",
+                  WebkitMaskImage: "url(/sidd_rim_stroke.png)",
+                  maskSize: "contain",
+                  WebkitMaskSize: "contain",
+                  maskPosition: "bottom",
+                  WebkitMaskPosition: "bottom",
+                  maskRepeat: "no-repeat",
+                  WebkitMaskRepeat: "no-repeat",
+                }}
+              >
+                <div
+                  className="absolute -left-[20%] w-[140%] h-[180px] bg-gradient-to-b from-transparent via-white to-transparent animate-contour-shimmer blur-[1.5px]"
+                  style={{
+                    filter: "drop-shadow(0 0 12px #ffffff)",
+                    mixBlendMode: "screen",
+                  }}
+                />
+              </div>
+
             </div>
           </div>
         </div>

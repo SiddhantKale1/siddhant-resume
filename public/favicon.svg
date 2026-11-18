@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12131A" />
+      <stop offset="100%" stop-color="#07080B" />
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#F43F5E" stop-opacity="0.6" />
+    </linearGradient>
+    <radialGradient id="ambientGlow" cx="70%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#F43F5E" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#F43F5E" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Squircle Base -->
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="2.5" />
+  
+  <!-- Ambient Crimson Accent Bloom -->
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#ambientGlow)" />
+
+  <!-- Monogram SK Typography -->
+  <text 
+    x="26" 
+    y="43" 
+    font-family="'Source Code Pro', 'JetBrains Mono', 'Fira Code', monospace" 
+    font-size="28" 
+    font-weight="800" 
+    letter-spacing="-1"
+    fill="#FFFFFF" 
+    text-anchor="middle"
+  >SK</text>
+
+  <!-- Crimson Accent Dot -->
+  <circle cx="49" cy="41" r="3.2" fill="#F43F5E" />
+</svg>

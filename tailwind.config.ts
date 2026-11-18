@@ -76,6 +76,38 @@ export default {
             transform: "translateY(0px)",
           },
         },
+        "contour-shimmer": {
+          "0%, 65%": {
+            transform: "translate3d(0, -120%, 0) rotate(-12deg)",
+            opacity: "0",
+          },
+          "68%": {
+            opacity: "1",
+          },
+          "88%": {
+            transform: "translate3d(0, 140%, 0) rotate(-12deg)",
+            opacity: "1",
+          },
+          "92%, 100%": {
+            transform: "translate3d(0, 160%, 0) rotate(-12deg)",
+            opacity: "0",
+          },
+        },
+        "spin-reverse": {
+          to: {
+            transform: "rotate(-360deg)",
+          },
+        },
+        "solar-pulse": {
+          "0%, 100%": {
+            opacity: "0.85",
+            transform: "translate(-50%, -50%) scale(0.96)",
+          },
+          "50%": {
+            opacity: "1.0",
+            transform: "translate(-50%, -50%) scale(1.04)",
+          },
+        },
         "fade-in-up": {
           "0%": {
             opacity: "0",
@@ -106,6 +138,10 @@ export default {
       animation: {
         marquee: "marquee 30s linear infinite",
         "blur-reveal": "blur-reveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) both",
+        "contour-shimmer": "contour-shimmer 8s cubic-bezier(0.4, 0, 0.2, 1) infinite",
+        "spin-slow": "spin 85s linear infinite",
+        "spin-reverse-slow": "spin-reverse 110s linear infinite",
+        "solar-pulse": "solar-pulse 7s ease-in-out infinite",
         "fade-in-up": "fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",

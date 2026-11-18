@@ -1,11 +1,13 @@
 interface SquircleGridProps {
-  glowPosition?: "right" | "center" | "left" | "none";
+  glowPosition?: "right" | "center" | "left" | "sunlight" | "none";
   className?: string;
 }
 
 export const SquircleGrid = ({ glowPosition = "right", className = "" }: SquircleGridProps) => {
   const getGlowStyles = () => {
     switch (glowPosition) {
+      case "sunlight":
+        return "radial-gradient(circle at 72% 32%, rgba(245, 158, 11, 0.45) 0%, rgba(217, 119, 6, 0.28) 28%, rgba(190, 24, 24, 0.18) 50%, rgba(8, 8, 10, 0) 78%)";
       case "right":
         return "radial-gradient(circle at 70% 36%, rgba(190, 24, 24, 0.48) 0%, rgba(153, 27, 27, 0.30) 32%, rgba(120, 18, 18, 0.14) 58%, rgba(8, 8, 10, 0) 80%)";
       case "center":
