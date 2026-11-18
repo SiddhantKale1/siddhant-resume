@@ -108,29 +108,33 @@ All colors MUST be HSL.
     }
   }
   
-  .custom-cursor {
-    pointer-events: none;
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: hsl(200, 100%, 50%);
-    box-shadow: 0 0 20px hsl(200, 100%, 50%, 0.6);
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    transition: width 0.2s, height 0.2s, opacity 0.2s;
+  @keyframes revealUp {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-  
-  .custom-cursor-follower {
-    pointer-events: none;
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid hsl(200, 100%, 50%, 0.5);
-    box-shadow: 0 0 30px hsl(200, 100%, 50%, 0.3);
-    transform: translate(-50%, -50%);
-    z-index: 9998;
-    transition: width 0.3s, height 0.3s, opacity 0.3s;
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.96) translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .animate-reveal-up {
+    animation: revealUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 }

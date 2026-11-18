@@ -16,9 +16,12 @@ export const Hero = () => {
 
       <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
         {/* Left Column: Authoritative Editorial Introduction */}
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-7 space-y-0">
           {/* Engineering Status Bar */}
-          <div className="inline-flex items-center gap-3 px-3 py-1.5 rounded-md bg-secondary/60 border border-border text-xs font-mono text-muted-foreground mb-6">
+          <div
+            className="animate-reveal-up inline-flex items-center gap-3 px-3 py-1.5 rounded-md bg-secondary/60 border border-border text-xs font-mono text-muted-foreground mb-6"
+            style={{ animationDelay: "80ms" }}
+          >
             <span className="flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
@@ -29,22 +32,34 @@ export const Hero = () => {
           </div>
 
           {/* Primary Name Display */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.08] mb-4">
+          <h1
+            className="animate-reveal-up text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.08] mb-4"
+            style={{ animationDelay: "180ms" }}
+          >
             Siddhant Kale
           </h1>
 
           {/* Role Specification */}
-          <p className="text-base sm:text-lg md:text-xl font-mono text-primary font-medium tracking-tight mb-5">
+          <p
+            className="animate-reveal-up text-base sm:text-lg md:text-xl font-mono text-primary font-medium tracking-tight mb-5"
+            style={{ animationDelay: "280ms" }}
+          >
             Software Engineer &bull; Backend Systems &bull; AI / Computer Vision
           </p>
 
           {/* Core Biography / Executive Summary */}
-          <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-6 max-w-xl">
+          <p
+            className="animate-reveal-up text-muted-foreground text-sm sm:text-base leading-relaxed mb-6 max-w-xl"
+            style={{ animationDelay: "380ms" }}
+          >
             Final-year Information Technology student at <span className="text-foreground font-medium">Vidyavardhini College of Engineering, Mumbai University</span> (CGPA 7.17). Hands-on experience architecting distributed backends, endpoint telemetry pipelines, and computer vision diagnostic systems using <span className="text-foreground font-medium">Python, FastAPI, React, OpenCV, and AWS</span>.
           </p>
 
           {/* Direct Technical Endpoints */}
-          <div className="flex flex-wrap items-center gap-y-2 gap-x-6 mb-8 text-xs sm:text-sm font-mono text-muted-foreground">
+          <div
+            className="animate-reveal-up flex flex-wrap items-center gap-y-2 gap-x-6 mb-8 text-xs sm:text-sm font-mono text-muted-foreground"
+            style={{ animationDelay: "480ms" }}
+          >
             <div className="flex items-center gap-2">
               <MapPin className="w-3.5 h-3.5 text-primary" />
               <span>Mumbai, India</span>
@@ -60,7 +75,10 @@ export const Hero = () => {
           </div>
 
           {/* Action CTAs */}
-          <div className="flex flex-wrap items-center gap-3">
+          <div
+            className="animate-reveal-up flex flex-wrap items-center gap-3"
+            style={{ animationDelay: "580ms" }}
+          >
             <a
               href="/Siddhant_Kale_Resume.pdf"
               download="Siddhant_Kale_Resume.pdf"
@@ -106,7 +124,10 @@ export const Hero = () => {
 
         {/* Right Column: Memorable Flagship Interactive Terminal */}
         <div className="lg:col-span-5 flex justify-center">
-          <div className="w-full max-w-lg bg-card border border-border rounded-xl shadow-xl shadow-black/30 overflow-hidden font-mono text-xs">
+          <div
+            className="animate-scale-in w-full max-w-lg bg-card border border-border rounded-xl shadow-xl shadow-black/30 overflow-hidden font-mono text-xs"
+            style={{ animationDelay: "320ms" }}
+          >
             {/* Terminal Header & Interactive Command Tabs */}
             <div className="bg-secondary/70 border-b border-border p-3 flex flex-wrap items-center justify-between gap-2">
               <div className="flex items-center gap-2">
