@@ -31,7 +31,7 @@ export const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 pt-3 sm:pt-5 px-3.5 sm:px-10 lg:px-14 pointer-events-none">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl bg-[#090A0E]/80 border border-white/10 backdrop-blur-lg flex items-center justify-between pointer-events-auto shadow-lg shadow-black/40">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl bg-white/[0.04] hover:bg-white/[0.06] border border-white/[0.12] backdrop-blur-xl backdrop-saturate-150 flex items-center justify-between pointer-events-auto shadow-[0_8px_32px_0_rgba(0,0,0,0.36),inset_0_1px_0_0_rgba(255,255,255,0.18)] transition-all duration-300">
         {/* Brand Monogram */}
         <a
           href="#"
@@ -88,7 +88,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden mt-2 bg-[#0C0D12]/95 backdrop-blur-xl border border-white/10 rounded-2xl px-6 py-6 transition-all duration-200 pointer-events-auto">
+        <div className="md:hidden mt-2 bg-[#0C0D12]/85 backdrop-blur-2xl border border-white/[0.12] rounded-2xl px-6 py-6 transition-all duration-200 pointer-events-auto shadow-[0_12px_40px_0_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.15)]">
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <button
