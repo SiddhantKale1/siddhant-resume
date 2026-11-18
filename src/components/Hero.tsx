@@ -50,12 +50,12 @@ export const Hero = () => {
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg md:text-xl text-primary/90 font-mono font-medium mb-4">
-            Software Engineer &bull; Backend Developer &bull; Cloud & AI Enthusiast
+            Software Engineer &bull; Python Developer &bull; Backend Development &bull; Cloud &amp; DevOps Enthusiast
           </p>
 
           {/* Executive Summary */}
           <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-6 max-w-2xl">
-            Final-year Information Technology student at <strong className="text-foreground">Vidyavardhini's College of Engineering & Technology</strong> (Mumbai University). Hands-on experience building scalable backends, real-time threat intelligence systems, and computer vision pipelines using <span className="text-foreground font-medium">Python, FastAPI, React, OpenCV, and AWS</span>.
+            Final-year Information Technology student with hands-on experience in software development, backend engineering, artificial intelligence, and cloud technologies. Skilled in <span className="text-foreground font-medium">Python, React, FastAPI, Flask, MongoDB, MySQL, OpenCV, and AWS</span>. Passionate about building scalable applications, solving real-world problems, and continuously learning modern software engineering practices. Seeking an entry-level Software Engineer role.
           </p>
 
           {/* Quick Contact Chips */}
@@ -148,18 +148,21 @@ export const Hero = () => {
                   <span className="text-primary font-semibold">"name"</span>: <span className="text-emerald-400">"Siddhant Kale"</span>,
                 </div>
                 <div className="pl-4">
-                  <span className="text-primary font-semibold">"degree"</span>: <span className="text-emerald-400">"B.E. Information Technology"</span>,
+                  <span className="text-primary font-semibold">"title"</span>: <span className="text-emerald-400">"Software Engineer | Python Developer"</span>,
                 </div>
                 <div className="pl-4">
-                  <span className="text-primary font-semibold">"college"</span>: <span className="text-muted-foreground">"VCET, Mumbai University"</span>,
+                  <span className="text-primary font-semibold">"focus"</span>: <span className="text-cyan-300">"Backend Development &amp; Cloud DevOps"</span>,
                 </div>
                 <div className="pl-4">
-                  <span className="text-primary font-semibold">"cgpa"</span>: <span className="text-amber-400 font-bold">7.17</span>,
+                  <span className="text-primary font-semibold">"degree"</span>: <span className="text-muted-foreground">"B.E. Information Technology (VCET, 2027)"</span>,
                 </div>
                 <div className="pl-4">
-                  <span className="text-primary font-semibold">"coreSkills"</span>: [
+                  <span className="text-primary font-semibold">"latestSemCGPA"</span>: <span className="text-amber-400 font-bold">7.17</span>,
+                </div>
+                <div className="pl-4">
+                  <span className="text-primary font-semibold">"coreStack"</span>: [
                   <div className="pl-4 text-cyan-300">
-                    "Python", "FastAPI", "React", "AWS", "MongoDB", "OpenCV"
+                    "Python", "FastAPI", "Flask", "React", "AWS", "MongoDB", "MySQL", "OpenCV"
                   </div>
                   ],
                 </div>

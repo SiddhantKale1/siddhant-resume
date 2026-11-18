@@ -16,48 +16,33 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Security Information & Event Management (SIEM)",
-    category: "Cybersecurity & Systems",
-    icon: Shield,
-    description:
-      "Enterprise security observability and endpoint telemetry system designed to ingest, correlate, and analyze security events across distributed Linux and server environments in real time.",
-    bullets: [
-      "Lightweight Python/Linux agent collecting system telemetry, auth logs, and process activities",
-      "FastAPI high-throughput backend with rule-based threat correlation & anomaly alerting",
-      "Interactive React & Tailwind security operations dashboard with visual attack heatmaps",
-    ],
-    tech: ["FastAPI", "Python", "React", "TypeScript", "Linux", "Tailwind CSS"],
-    github: "https://github.com/SiddhantKale1/SIEM-Dashboard-security-information-event-mangement-",
-    gradient: "from-cyan-500 to-blue-600",
-  },
-  {
     title: "Brain Tumor Detection System",
     category: "Artificial Intelligence & CV",
     icon: Brain,
     description:
       "Deep Learning computer vision system utilizing Convolutional Neural Networks (CNN) with Grad-CAM visualization for high-accuracy MRI brain tumor diagnostic localization.",
     bullets: [
-      "Custom CNN trained on MRI scans with Grad-CAM visual heatmaps explaining predictions",
-      "Flask & FastAPI web service delivering low-latency inference on uploaded scans",
-      "OpenCV preprocessing pipeline featuring skull-stripping, contrast enhancement & augmentation",
+      "Developed a CNN-based MRI tumor detection system with Grad-CAM visualization for high-accuracy diagnostic localization.",
+      "Built a Flask/FastAPI web application for seamless end-user predictions and real-time medical image visualization.",
+      "Implemented advanced image preprocessing pipelines utilizing OpenCV for skull-stripping, contrast enhancement, and data augmentation.",
     ],
     tech: ["Python", "TensorFlow", "Keras", "OpenCV", "FastAPI", "Flask"],
     github: "https://github.com/SiddhantKale1/Brain-Tumor-Detection",
     gradient: "from-emerald-500 to-teal-600",
   },
   {
-    title: "Smart Attendance System (AttendEase)",
+    title: "Smart Attendance System",
     category: "Computer Vision & Automation",
     icon: Camera,
     description:
       "AI-driven automated attendance tracking platform capturing real-time video streams, recognizing student faces, and generating structured compliance reports.",
     bullets: [
-      "Real-time video face detection and biometric matching using OpenCV and Python",
-      "MongoDB database integration for secure timestamped record keeping",
-      "Automated attendance report generation with export to Excel/CSV spreadsheets",
+      "Built an AI-powered attendance system using OpenCV and Python featuring real-time video stream capture.",
+      "Recognizes faces from classroom images, stores attendance securely in MongoDB, and automatically generates Excel reports.",
+      "Reduced manual attendance management by automating face recognition and Excel report generation.",
     ],
-    tech: ["Python", "OpenCV", "MongoDB", "SQLite", "Flask"],
-    github: "https://github.com/SiddhantKale1/attendease",
+    tech: ["Python", "OpenCV", "SQLite", "Flask", "MongoDB"],
+    github: "https://github.com/SiddhantKale1",
     gradient: "from-purple-500 to-indigo-600",
   },
   {
@@ -67,13 +52,28 @@ const projects: Project[] = [
     description:
       "Splitwise-inspired group expense settlement application designed to orchestrate clean MVC data storage and simplify group debt transactions.",
     bullets: [
-      "Flask and MySQL architecture orchestrating secure authentication and group ledger storage",
-      "Graph-based balance minimization algorithm reducing the total number of reimbursement transactions",
-      "Intuitive responsive interface for real-time split calculations and transaction summaries",
+      "Developed a Splitwise-inspired expense management application using Flask and MySQL to orchestrate clean MVC data storage.",
+      "Implemented secure authentication, robust group management, precise expense tracking, and balanced settlement calculations.",
+      "Integrated an exact simplified balance optimization algorithm to systematically calculate and minimize the net transactions required between group members.",
     ],
-    tech: ["Python", "Flask", "MySQL", "React", "REST APIs"],
+    tech: ["Python", "Flask", "MySQL", "REST APIs"],
     github: "https://github.com/SiddhantKale1/Split_It",
     gradient: "from-amber-500 to-orange-600",
+  },
+  {
+    title: "Security Information & Event Management (SIEM)",
+    category: "Cybersecurity & Systems Observability",
+    icon: Shield,
+    description:
+      "Enterprise security observability and endpoint telemetry system designed to ingest, correlate, and analyze security events across distributed Linux and server environments in real time.",
+    bullets: [
+      "Lightweight Python/Linux agent collecting system telemetry, auth logs, and process activities.",
+      "FastAPI high-throughput backend with rule-based threat correlation & anomaly alerting.",
+      "Interactive React & Tailwind security operations dashboard with visual attack heatmaps.",
+    ],
+    tech: ["FastAPI", "Python", "React", "TypeScript", "Linux", "Tailwind CSS"],
+    github: "https://github.com/SiddhantKale1/SIEM-Dashboard-security-information-event-mangement-",
+    gradient: "from-cyan-500 to-blue-600",
   },
 ];
 

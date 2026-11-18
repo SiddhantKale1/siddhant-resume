@@ -6,11 +6,11 @@ const skillCategories = [
     icon: Code2,
     title: "Languages",
     color: "from-blue-500 to-cyan-500",
-    skills: ["Python", "JavaScript", "C", "C++", "Java", "HTML5", "CSS3"],
+    skills: ["Python", "JavaScript", "HTML5", "CSS3", "C", "C++", "Java"],
   },
   {
     icon: Zap,
-    title: "Web & Frameworks",
+    title: "Frameworks & Web",
     color: "from-purple-500 to-pink-500",
     skills: ["React.js", "Flask", "FastAPI", "Node.js", "Express.js"],
   },
@@ -22,21 +22,21 @@ const skillCategories = [
   },
   {
     icon: Cloud,
-    title: "Cloud & DevOps",
+    title: "Cloud & Tools",
     color: "from-orange-500 to-red-500",
-    skills: ["AWS", "Google Cloud", "Docker", "Git", "GitHub"],
-  },
-  {
-    icon: Wrench,
-    title: "Tools & APIs",
-    color: "from-indigo-500 to-violet-500",
-    skills: ["OpenCV", "REST APIs", "Firebase", "Postman", "Linux"],
+    skills: ["AWS", "Google Cloud", "Git", "GitHub", "OpenCV", "REST APIs"],
   },
   {
     icon: GitBranch,
     title: "CS Fundamentals",
     color: "from-pink-500 to-rose-500",
     skills: ["Data Structures", "DBMS", "OOP", "Operating Systems", "Computer Networks"],
+  },
+  {
+    icon: Wrench,
+    title: "Dev & Systems",
+    color: "from-indigo-500 to-violet-500",
+    skills: ["Linux", "Docker", "Postman", "Tailwind CSS", "Microservices"],
   },
 ];
 

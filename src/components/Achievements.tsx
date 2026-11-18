@@ -25,6 +25,13 @@ const certifications: Certification[] = [
     color: "from-blue-500 to-cyan-500",
   },
   {
+    title: "Python for Data Science",
+    issuer: "Infosys Springboard",
+    badge: "Certified",
+    icon: Award,
+    color: "from-indigo-500 to-violet-600",
+  },
+  {
     title: "Database Management System Part-1",
     issuer: "Infosys Springboard",
     badge: "Certified",
@@ -37,13 +44,6 @@ const certifications: Certification[] = [
     badge: "Certified",
     icon: Code,
     color: "from-red-500 to-pink-600",
-  },
-  {
-    title: "Python for Data Science",
-    issuer: "Infosys Springboard",
-    badge: "Certified",
-    icon: Award,
-    color: "from-indigo-500 to-violet-600",
   },
   {
     title: "AWS Fundamentals",
