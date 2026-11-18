@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
-import { Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, ArrowRight, FileDown, Terminal, Sparkles, CheckCircle2 } from "lucide-react";
 
 export const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -22,84 +22,169 @@ export const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center relative overflow-hidden px-8 md:px-16">
-      <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
-        {/* Left side - Text content */}
-        <div className="relative z-10 animate-fade-in">
-          <div className="mb-8">
-            <span className="inline-block px-5 py-2.5 rounded-full bg-border/20 text-muted-foreground text-sm font-medium">
-              Portfolio • Interactive • Modern
-            </span>
+    <section id="about" className="relative min-h-screen flex items-center overflow-hidden px-4 sm:px-6 md:px-12 pt-28 pb-16">
+      {/* Animated background glow elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 left-10 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-primary/5 rounded-full blur-[140px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-primary/5 via-transparent to-primary/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-12 items-center relative z-10">
+        {/* Left column - Introduction & Bio */}
+        <div className="lg:col-span-7 animate-fade-in">
+          {/* Status Badge */}
+          <div className="mb-6 inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-xs sm:text-sm font-medium text-primary backdrop-blur-sm shadow-sm hover:border-primary/40 transition-all">
+            <span className="w-2 h-2 bg-primary rounded-full animate-ping" />
+            <span className="w-2 h-2 bg-primary rounded-full -ml-4" />
+            <span>Seeking Entry-Level Software Engineer Roles</span>
           </div>
 
-          <h1 className="text-7xl md:text-8xl font-bold mb-6 text-foreground leading-tight">
-            Siddhant Kale
+          {/* Main Heading */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4 text-foreground leading-[1.1]">
+            Hi, I'm <br className="hidden sm:inline" />
+            <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
+              Siddhant Kale
+            </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-2">
-            IT Engineering Student | Aspiring Full-Stack Developer
+          {/* Subtitle */}
+          <p className="text-base sm:text-lg md:text-xl text-primary/90 font-mono font-medium mb-4">
+            Software Engineer &bull; Backend Developer &bull; Cloud & AI Enthusiast
           </p>
 
-          <div className="flex items-center gap-6 mb-8 text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
+          {/* Executive Summary */}
+          <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-6 max-w-2xl">
+            Final-year Information Technology student at <strong className="text-foreground">Vidyavardhini's College of Engineering & Technology</strong> (Mumbai University). Hands-on experience building scalable backends, real-time threat intelligence systems, and computer vision pipelines using <span className="text-foreground font-medium">Python, FastAPI, React, OpenCV, and AWS</span>.
+          </p>
+
+          {/* Quick Contact Chips */}
+          <div className="flex flex-wrap gap-y-2 gap-x-5 mb-8 text-xs sm:text-sm text-muted-foreground">
+            <div className="flex items-center gap-1.5 hover:text-primary transition-colors">
+              <MapPin className="w-4 h-4 text-primary" />
               <span>Mumbai, India</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4" />
-              <span>siddhant.233184102@vcet.edu.in</span>
-            </div>
+            <a href="tel:+918108901398" className="flex items-center gap-1.5 hover:text-primary transition-colors">
+              <Phone className="w-4 h-4 text-primary" />
+              <span>+91 8108901398</span>
+            </a>
+            <a href="mailto:siddhantkalework@gmail.com" className="flex items-center gap-1.5 hover:text-primary transition-colors">
+              <Mail className="w-4 h-4 text-primary" />
+              <span>siddhantkalework@gmail.com</span>
+            </a>
           </div>
 
-          {/* Buttons Section */}
-          <div className="flex gap-4 mb-12 flex-wrap">
-            {/* LinkedIn */}
+          {/* Action CTAs */}
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
             <a
-              href="https://www.linkedin.com/in/siddhant-kale-301807318/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 rounded-md bg-foreground text-background hover:bg-foreground/90 font-medium text-lg transition"
+              href="/Siddhant_Kale_Resume.pdf"
+              download="Siddhant_Kale_Resume.pdf"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-primary text-primary-foreground font-semibold text-sm sm:text-base hover:bg-primary/90 shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-200"
             >
-              <Linkedin className="w-4 h-4 mr-2" />
-              LinkedIn
+              <FileDown className="w-4 h-4" />
+              Download Resume
             </a>
 
-            {/* GitHub */}
+            <Button
+              variant="outline"
+              size="lg"
+              className="rounded-xl border-border bg-card/60 hover:bg-primary/10 hover:border-primary/50 text-foreground font-medium text-sm sm:text-base hover:-translate-y-0.5 transition-all duration-200"
+              onClick={() => scrollToSection("projects")}
+            >
+              View Projects
+              <ArrowRight className="w-4 h-4 ml-2 text-primary" />
+            </Button>
+
             <a
               href="https://github.com/SiddhantKale1"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 rounded-md border border-border/50 hover:bg-border/10 font-medium text-lg transition"
+              aria-label="GitHub Profile"
+              className="p-3 rounded-xl border border-border bg-card/60 hover:border-primary/50 hover:bg-primary/10 text-muted-foreground hover:text-foreground transition-all duration-200"
             >
-              <Github className="w-4 h-4 mr-2" />
-              GitHub
+              <Github className="w-5 h-5" />
             </a>
 
-            {/* View Projects */}
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-primary/50 text-primary hover:bg-primary/10 font-medium"
-              onClick={() => scrollToSection("projects")}
+            <a
+              href="https://www.linkedin.com/in/siddhant-kale-301807318/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
+              className="p-3 rounded-xl border border-border bg-card/60 hover:border-primary/50 hover:bg-primary/10 text-muted-foreground hover:text-foreground transition-all duration-200"
             >
-              View Projects
-            </Button>
+              <Linkedin className="w-5 h-5" />
+            </a>
           </div>
         </div>
 
-        {/* Right side - 3D Visual placeholder */}
-        <div className="hidden md:flex items-center justify-center relative">
-          <div className="relative w-full h-[500px] flex items-center justify-center">
-            {/* Animated background glow */}
-            <div
-              className="absolute inset-0 opacity-30"
-              style={{
-                transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
-                transition: "transform 0.3s ease-out",
-              }}
-            >
-              <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl opacity-40" />
-              <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary-glow rounded-full blur-3xl opacity-30" />
+        {/* Right column - Interactive Code / Terminal Showcase */}
+        <div className="lg:col-span-5 flex justify-center">
+          <div
+            className="w-full max-w-lg bg-card/90 backdrop-blur-xl border border-border rounded-2xl shadow-2xl shadow-black/40 overflow-hidden transition-transform duration-300 hover:border-primary/40"
+            style={{
+              transform: `perspective(1000px) rotateY(${mousePosition.x * 0.4}deg) rotateX(${-mousePosition.y * 0.4}deg)`,
+            }}
+          >
+            {/* Terminal Window Header */}
+            <div className="flex items-center justify-between px-4 py-3 bg-secondary/60 border-b border-border text-xs font-mono text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                <span className="ml-2 text-muted-foreground/80 font-mono text-xs">siddhant@mumbai:~</span>
+              </div>
+              <Terminal className="w-3.5 h-3.5 text-primary" />
+            </div>
+
+            {/* Terminal Code Content */}
+            <div className="p-5 font-mono text-xs sm:text-sm space-y-3 bg-black/40">
+              <div className="text-muted-foreground">
+                <span className="text-primary">$</span> cat profile.json
+              </div>
+
+              <div className="text-foreground/90 pl-2 border-l border-primary/30 space-y-1">
+                <div>&#123;</div>
+                <div className="pl-4">
+                  <span className="text-primary font-semibold">"name"</span>: <span className="text-emerald-400">"Siddhant Kale"</span>,
+                </div>
+                <div className="pl-4">
+                  <span className="text-primary font-semibold">"degree"</span>: <span className="text-emerald-400">"B.E. Information Technology"</span>,
+                </div>
+                <div className="pl-4">
+                  <span className="text-primary font-semibold">"college"</span>: <span className="text-muted-foreground">"VCET, Mumbai University"</span>,
+                </div>
+                <div className="pl-4">
+                  <span className="text-primary font-semibold">"cgpa"</span>: <span className="text-amber-400 font-bold">7.17</span>,
+                </div>
+                <div className="pl-4">
+                  <span className="text-primary font-semibold">"coreSkills"</span>: [
+                  <div className="pl-4 text-cyan-300">
+                    "Python", "FastAPI", "React", "AWS", "MongoDB", "OpenCV"
+                  </div>
+                  ],
+                </div>
+                <div className="pl-4">
+                  <span className="text-primary font-semibold">"openForWork"</span>: <span className="text-green-400 font-bold">true</span>
+                </div>
+                <div>&#125;</div>
+              </div>
+
+              <div className="pt-2 text-muted-foreground">
+                <span className="text-primary">$</span> systemctl status readiness.service
+                <div className="text-emerald-400 flex items-center gap-1.5 mt-1 font-sans text-xs">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                  <span>Active: ready to deploy scalable systems &amp; solve tough problems</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Terminal Footer Quick Stat */}
+            <div className="px-5 py-3 bg-secondary/30 border-t border-border flex items-center justify-between text-xs text-muted-foreground">
+              <span className="flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-primary" />
+                Available for Full-Time Roles
+              </span>
+              <span className="font-mono text-primary font-medium">Graduating 2027</span>
             </div>
           </div>
         </div>
