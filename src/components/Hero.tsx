@@ -27,12 +27,12 @@ export const Hero = () => {
       <SquircleGrid glowPosition="right" />
 
       {/* Main Hero Content */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 w-full flex-1 flex items-end relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-14 w-full flex-1 flex items-end relative z-10">
         <div className="grid lg:grid-cols-12 gap-8 items-end w-full pb-4">
           {/* Left Column: Headline, Bio & Action Buttons */}
-          <div className="lg:col-span-7 xl:col-span-6 space-y-6 sm:space-y-7 pb-8 lg:pb-12 relative z-20">
+          <div className="lg:col-span-7 xl:col-span-6 space-y-5 sm:space-y-7 pb-4 sm:pb-8 lg:pb-12 relative z-20">
             {/* Bold Hero Headline - Staggered Kinetic Blur Reveal */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[46px] xl:text-[54px] font-normal tracking-[-0.03em] text-white leading-[1.12]">
+            <h1 className="text-[32px] xs:text-4xl sm:text-5xl lg:text-[46px] xl:text-[54px] font-normal tracking-[-0.03em] text-white leading-[1.14]">
               <span className="block animate-blur-reveal [animation-delay:120ms]">
                 Building <span className="font-bold">things that</span>
               </span>
@@ -45,15 +45,15 @@ export const Hero = () => {
             </h1>
 
             {/* Subtitle / Value Proposition - Staggered Blur Reveal */}
-            <p className="animate-blur-reveal [animation-delay:550ms] text-sm sm:text-[15px] text-zinc-400 font-normal max-w-[430px] leading-relaxed">
+            <p className="animate-blur-reveal [animation-delay:550ms] text-xs sm:text-[15px] text-zinc-400 font-normal max-w-[430px] leading-relaxed">
               Software, systems, and digital artifacts engineered without compromise. Designed for those who appreciate depth, speed, and original thinking.
             </p>
 
-            {/* Action Buttons: Exact rectangular-pill shape from reference */}
-            <div className="animate-blur-reveal [animation-delay:700ms] flex items-center gap-3.5 pt-2">
+            {/* Action Buttons: Mobile-friendly flex wrapping */}
+            <div className="animate-blur-reveal [animation-delay:700ms] flex flex-wrap sm:flex-nowrap items-center gap-3 pt-1 sm:pt-2">
               <button
                 onClick={() => scrollToSection("contact")}
-                className="px-7 py-3 rounded-xl bg-white text-black font-semibold text-sm hover:bg-zinc-100 transition-all duration-200 shadow-xl shadow-white/5 active:scale-95"
+                className="flex-1 sm:flex-none px-6 sm:px-7 py-2.5 sm:py-3 rounded-xl bg-white text-black font-semibold text-xs sm:text-sm hover:bg-zinc-100 transition-all duration-200 shadow-xl shadow-white/5 active:scale-95 text-center"
               >
                 Let's Talk
               </button>
@@ -61,29 +61,29 @@ export const Hero = () => {
               <a
                 href="/Siddhant_Kale_Resume.pdf"
                 download="Siddhant_Kale_Resume.pdf"
-                className="px-6 py-3 rounded-xl bg-transparent hover:bg-white/[0.04] text-white border border-white/20 font-medium text-sm transition-all duration-200 flex items-center gap-2 active:scale-95"
+                className="flex-1 sm:flex-none px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-transparent hover:bg-white/[0.04] text-white border border-white/20 font-medium text-xs sm:text-sm transition-all duration-200 flex items-center justify-center gap-2 active:scale-95 text-center whitespace-nowrap"
               >
                 <span>Download Resume</span>
-                <Download className="w-4 h-4 text-zinc-300" />
+                <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-zinc-300" />
               </a>
             </div>
           </div>
 
-          {/* Right Column: Hero Portrait with Subtle, Tasteful Celestial God Rays */}
-          <div className="lg:col-span-5 xl:col-span-6 relative flex items-end justify-center lg:justify-end">
-            <div className="animate-blur-reveal [animation-delay:280ms] relative w-full max-w-[560px] sm:max-w-[640px] lg:max-w-[760px] xl:max-w-[820px] flex justify-center lg:justify-end lg:translate-x-8 xl:translate-x-12">
+          {/* Right Column: Hero Portrait with Compact Pure White Rays */}
+          <div className="lg:col-span-5 xl:col-span-6 relative flex items-end justify-center lg:justify-end mt-2 lg:mt-0">
+            <div className="animate-blur-reveal [animation-delay:280ms] relative w-full max-w-[360px] sm:max-w-[480px] lg:max-w-[760px] xl:max-w-[820px] flex justify-center lg:justify-end lg:translate-x-8 xl:translate-x-12">
               
               {/* ======================================================== */}
               {/* COMPACT PURE WHITE LIGHT RAYS (Behind Back at Chest Level) */}
               {/* ======================================================== */}
-              <div className="absolute top-[46%] left-[53%] -translate-x-1/2 -translate-y-1/2 w-[560px] sm:w-[680px] h-[560px] sm:h-[680px] pointer-events-none select-none z-0 flex items-center justify-center">
+              <div className="absolute top-[46%] left-[53%] -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[500px] lg:w-[680px] h-[340px] sm:h-[500px] lg:h-[680px] pointer-events-none select-none z-0 flex items-center justify-center">
                 
                 {/* 1. Soft Pure White Ambient Backlight */}
-                <div className="absolute w-[380px] sm:w-[460px] h-[380px] sm:h-[460px] rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.18)_0%,rgba(255,255,255,0.06)_40%,transparent_70%)] blur-[55px]" />
+                <div className="absolute w-[240px] sm:w-[340px] lg:w-[460px] h-[240px] sm:h-[340px] lg:h-[460px] rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.18)_0%,rgba(255,255,255,0.06)_40%,transparent_70%)] blur-[40px] sm:blur-[55px]" />
 
                 {/* 2. Secondary Translucent White Rays (Counter-Rotating) */}
                 <div 
-                  className="absolute w-[540px] sm:w-[660px] h-[540px] sm:h-[660px] rounded-full animate-spin-reverse-slow opacity-25"
+                  className="absolute w-[330px] sm:w-[480px] lg:w-[660px] h-[330px] sm:h-[480px] lg:h-[660px] rounded-full animate-spin-reverse-slow opacity-25"
                   style={{
                     background: `repeating-conic-gradient(
                       from 20deg at 50% 50%,
@@ -96,13 +96,13 @@ export const Hero = () => {
                     )`,
                     maskImage: "radial-gradient(circle at center, black 15%, rgba(0,0,0,0.7) 38%, transparent 62%)",
                     WebkitMaskImage: "radial-gradient(circle at center, black 15%, rgba(0,0,0,0.7) 38%, transparent 62%)",
-                    filter: "blur(12px)",
+                    filter: "blur(10px)",
                   }}
                 />
 
                 {/* 3. Primary Compact White God Rays (Rotating) */}
                 <div 
-                  className="absolute w-[520px] sm:w-[640px] h-[520px] sm:h-[640px] rounded-full animate-spin-slow opacity-30"
+                  className="absolute w-[320px] sm:w-[460px] lg:w-[640px] h-[320px] sm:h-[460px] lg:h-[640px] rounded-full animate-spin-slow opacity-30"
                   style={{
                     background: `repeating-conic-gradient(
                       from 0deg at 50% 50%,
@@ -117,16 +117,16 @@ export const Hero = () => {
                     )`,
                     maskImage: "radial-gradient(circle at center, black 15%, rgba(0,0,0,0.8) 35%, transparent 60%)",
                     WebkitMaskImage: "radial-gradient(circle at center, black 15%, rgba(0,0,0,0.8) 35%, transparent 60%)",
-                    filter: "blur(7px)",
+                    filter: "blur(6px)",
                   }}
                 />
 
                 {/* 4. Crisp White Light Core at Chest Level */}
                 <div 
-                  className="absolute w-[180px] sm:w-[220px] h-[180px] sm:h-[220px] rounded-full"
+                  className="absolute w-[120px] sm:w-[160px] lg:w-[220px] h-[120px] sm:h-[160px] lg:h-[220px] rounded-full"
                   style={{
                     background: "radial-gradient(circle at center, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.22) 32%, transparent 70%)",
-                    filter: "blur(22px)",
+                    filter: "blur(18px)",
                   }}
                 />
               </div>
@@ -135,7 +135,7 @@ export const Hero = () => {
               <img
                 src="/sidd_hero.png"
                 alt="Siddhant Kale — Software Engineer"
-                className="w-full h-auto object-contain object-bottom max-h-[780px] xl:max-h-[860px] select-none pointer-events-none relative z-10"
+                className="w-full h-auto object-contain object-bottom max-h-[460px] sm:max-h-[600px] lg:max-h-[780px] xl:max-h-[860px] select-none pointer-events-none relative z-10"
                 style={{
                   filter: "drop-shadow(0 0 22px rgba(255, 255, 255, 0.22))",
                 }}

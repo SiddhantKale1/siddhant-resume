@@ -42,10 +42,10 @@ export const Milestones = () => {
   ];
 
   return (
-    <section id="milestones" className="relative py-24 sm:py-32 text-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
+    <section id="milestones" className="relative py-16 sm:py-32 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-14 relative z-10">
         {/* Centered Header - Exact matching reference typography */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
           <div className="text-[11px] font-mono tracking-[0.25em] text-zinc-400 uppercase font-medium mb-3">
             EXPERIENCE
           </div>
@@ -55,7 +55,7 @@ export const Milestones = () => {
         </div>
 
         {/* Split Grid: Left Photo Card, Right Timeline */}
-        <div className="grid lg:grid-cols-12 gap-10 items-start">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* Left Column: Portrait Card with Red Squircle Grid (Matching Screenshot) */}
           <div className="lg:col-span-5 relative">
             <div className="rounded-2xl sm:rounded-[22px] bg-[#0E0F14]/90 border border-white/[0.07] p-5 relative overflow-hidden group shadow-2xl backdrop-blur-sm">

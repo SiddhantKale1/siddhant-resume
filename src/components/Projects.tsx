@@ -99,10 +99,10 @@ const projects: ProjectItem[] = [
 
 export const Projects = () => {
   return (
-    <section id="projects" className="relative py-24 sm:py-32 text-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
+    <section id="projects" className="relative py-16 sm:py-32 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-14 relative z-10">
         {/* Section Header - Exact matching reference typography */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div>
             <div className="text-[11px] font-mono tracking-[0.25em] text-zinc-400 uppercase font-medium mb-3">
               FEATURED SOLUTIONS &amp; PROJECTS
@@ -124,18 +124,18 @@ export const Projects = () => {
         </div>
 
         {/* Projects Grid: 2 Columns Matching Reference */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group rounded-2xl sm:rounded-[22px] bg-[#0E0F14]/90 border border-white/[0.07] hover:border-red-500/35 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between overflow-hidden relative shadow-2xl backdrop-blur-sm"
+              className="group rounded-2xl sm:rounded-[22px] bg-[#0E0F14]/90 border border-white/[0.07] hover:border-red-500/35 transition-all duration-300 p-5 sm:p-8 flex flex-col justify-between overflow-hidden relative shadow-2xl backdrop-blur-sm"
             >
               {/* Subtle ambient card glow */}
               <div className="absolute top-0 right-0 w-72 h-72 bg-red-600/10 rounded-full blur-[90px] pointer-events-none group-hover:bg-red-600/20 transition-all" />
 
               <div>
                 {/* Visual UI Mockup Box - Dark, sleek screenshot/terminal aesthetic */}
-                <div className="relative h-52 sm:h-56 w-full rounded-xl bg-[#090A0E] border border-white/[0.06] mb-6 overflow-hidden flex flex-col p-4 shadow-inner">
+                <div className="relative h-48 sm:h-56 w-full rounded-xl bg-[#090A0E] border border-white/[0.06] mb-5 sm:mb-6 overflow-hidden flex flex-col p-3.5 sm:p-4 shadow-inner">
                   {/* Top bar */}
                   <div className="flex items-center justify-between pb-3 border-b border-white/[0.06] text-xs font-mono text-zinc-400">
                     <div className="flex items-center gap-2">

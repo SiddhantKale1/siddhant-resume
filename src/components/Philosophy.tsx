@@ -60,10 +60,10 @@ export const Philosophy = () => {
   };
 
   return (
-    <section id="philosophy" className="relative py-24 sm:py-32 text-white">
-      <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
+    <section id="philosophy" className="relative py-16 sm:py-32 text-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-10 lg:px-14 relative z-10">
         {/* Section Header - Exact matching reference typography */}
-        <div className="text-center max-w-2xl mx-auto mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <div className="text-[11px] font-mono tracking-[0.25em] text-zinc-400 uppercase font-medium mb-3">
             THE ENGINEER BEHIND THE CODE
           </div>
@@ -73,43 +73,46 @@ export const Philosophy = () => {
         </div>
 
         {/* Cinematic Video / Interactive Console Player Frame (Exact aesthetic from Screenshot 3) */}
-        <div className="relative rounded-2xl sm:rounded-[22px] bg-[#0E0F14]/90 border border-white/[0.07] hover:border-red-500/35 p-4 sm:p-6 shadow-2xl overflow-hidden mb-24 group backdrop-blur-sm transition-all duration-300">
+        <div className="relative rounded-2xl sm:rounded-[22px] bg-[#0E0F14]/90 border border-white/[0.07] hover:border-red-500/35 p-3.5 sm:p-6 shadow-2xl overflow-hidden mb-16 sm:mb-24 group backdrop-blur-sm transition-all duration-300">
           {/* Intense ambient glow behind player */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-red-600/20 rounded-full blur-[120px] pointer-events-none" />
 
           {/* Interactive Player Screen */}
-          <div className="relative rounded-xl aspect-[16/9] bg-black/90 border border-white/[0.06] overflow-hidden flex flex-col justify-between p-6 sm:p-10">
+          <div className="relative rounded-xl min-h-[380px] sm:min-h-0 sm:aspect-[16/9] bg-black/90 border border-white/[0.06] overflow-hidden flex flex-col justify-between p-4 sm:p-10">
             {/* Top Bar with Philosophy Switcher */}
-            <div className="flex items-center justify-between z-10">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 z-10">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse" />
-                <span className="font-mono text-xs text-zinc-400">ENGINEERING_MANIFESTO.sh</span>
+                <span className="font-mono text-[11px] sm:text-xs text-zinc-400">ENGINEERING_MANIFESTO.sh</span>
               </div>
 
-              <div className="flex items-center gap-1.5 bg-white/[0.04] p-1 rounded-lg border border-white/10 text-xs font-mono">
+              <div className="flex items-center gap-1 bg-white/[0.04] p-1 rounded-lg border border-white/10 text-[10px] sm:text-xs font-mono overflow-x-auto">
                 <button
                   onClick={() => setActiveTab("systems")}
-                  className={`px-3 py-1 rounded-md transition-colors ${
+                  className={`px-2.5 py-1 rounded-md transition-colors whitespace-nowrap ${
                     activeTab === "systems" ? "bg-red-500 text-white font-bold" : "text-zinc-400 hover:text-white"
                   }`}
                 >
-                  Distributed Systems
+                  <span className="sm:hidden">Systems</span>
+                  <span className="hidden sm:inline">Distributed Systems</span>
                 </button>
                 <button
                   onClick={() => setActiveTab("rag")}
-                  className={`px-3 py-1 rounded-md transition-colors ${
+                  className={`px-2.5 py-1 rounded-md transition-colors whitespace-nowrap ${
                     activeTab === "rag" ? "bg-red-500 text-white font-bold" : "text-zinc-400 hover:text-white"
                   }`}
                 >
-                  Zero-Hallucination AI
+                  <span className="sm:hidden">RAG</span>
+                  <span className="hidden sm:inline">Zero-Hallucination AI</span>
                 </button>
                 <button
                   onClick={() => setActiveTab("telemetry")}
-                  className={`px-3 py-1 rounded-md transition-colors ${
+                  className={`px-2.5 py-1 rounded-md transition-colors whitespace-nowrap ${
                     activeTab === "telemetry" ? "bg-red-500 text-white font-bold" : "text-zinc-400 hover:text-white"
                   }`}
                 >
-                  Kernel Telemetry
+                  <span className="sm:hidden">Telemetry</span>
+                  <span className="hidden sm:inline">Kernel Telemetry</span>
                 </button>
               </div>
             </div>

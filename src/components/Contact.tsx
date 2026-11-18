@@ -29,25 +29,25 @@ export const Contact = () => {
   };
 
   return (
-    <footer id="contact" className="relative text-white pt-24 sm:pt-32 pb-12">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
+    <footer id="contact" className="relative text-white pt-16 sm:pt-32 pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-14 relative z-10">
         {/* Header - Reference typography */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-12 sm:mb-16">
           <div className="text-[11px] font-mono tracking-[0.25em] text-zinc-400 uppercase font-medium mb-3">
             CONTACT &amp; COLLABORATION
           </div>
           <h2 className="text-3xl sm:text-5xl font-normal tracking-tight text-white leading-tight">
             Let&apos;s build scalable <span className="font-bold">systems together.</span>
           </h2>
-          <p className="text-zinc-400 mt-4 text-sm sm:text-base leading-relaxed">
+          <p className="text-zinc-400 mt-4 text-xs sm:text-base leading-relaxed">
             Actively interviewing for full-time Software Engineer, Backend Developer, and Distributed Systems roles starting 2027.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-12 items-start mb-20">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-16 sm:mb-20">
           {/* Left Column: Direct Contact Details & Resume Download */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="rounded-2xl sm:rounded-[22px] bg-[#0E0F14]/90 border border-white/[0.07] p-7 sm:p-8 space-y-6 shadow-2xl backdrop-blur-sm">
+            <div className="rounded-2xl sm:rounded-[22px] bg-[#0E0F14]/90 border border-white/[0.07] p-5 sm:p-8 space-y-6 shadow-2xl backdrop-blur-sm">
               <h3 className="text-lg font-bold text-white">
                 Direct Channels
               </h3>

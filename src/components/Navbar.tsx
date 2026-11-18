@@ -30,8 +30,8 @@ export const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 pt-5 px-6 sm:px-10 lg:px-14 pointer-events-none">
-      <div className="max-w-7xl mx-auto px-6 py-3 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md flex items-center justify-between pointer-events-auto">
+    <header className="fixed top-0 left-0 right-0 z-50 pt-3 sm:pt-5 px-3.5 sm:px-10 lg:px-14 pointer-events-none">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl bg-[#090A0E]/80 border border-white/10 backdrop-blur-lg flex items-center justify-between pointer-events-auto shadow-lg shadow-black/40">
         {/* Brand Monogram */}
         <a
           href="#"

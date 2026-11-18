@@ -2,10 +2,10 @@ import { ShieldCheck, Zap, Server, Globe2, Code, Terminal } from "lucide-react";
 
 export const Capabilities = () => {
   return (
-    <section id="capabilities" className="relative py-24 sm:py-32 text-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
+    <section id="capabilities" className="relative py-16 sm:py-32 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-14 relative z-10">
         {/* Section Header - Exact reference styling */}
-        <div className="mb-16">
+        <div className="mb-12 sm:mb-16">
           <div className="text-[11px] font-mono tracking-[0.25em] text-zinc-400 uppercase font-medium mb-3">
             WHY PARTNER WITH ME
           </div>
@@ -15,9 +15,9 @@ export const Capabilities = () => {
         </div>
 
         {/* 4-Card Bento Grid - Exact layout and visual motifs */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
           {/* Bento Card 1: Production-Grade Reliability */}
-          <div className="group rounded-2xl sm:rounded-[22px] bg-[#0E0F14]/90 border border-white/[0.07] hover:border-red-500/35 p-7 sm:p-9 transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-2xl backdrop-blur-sm">
+          <div className="group rounded-2xl sm:rounded-[22px] bg-[#0E0F14]/90 border border-white/[0.07] hover:border-red-500/35 p-5 sm:p-9 transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-2xl backdrop-blur-sm">
             {/* Ambient inner glow */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-red-600/15 transition-all" />
 
@@ -59,7 +59,7 @@ export const Capabilities = () => {
           </div>
 
           {/* Bento Card 2: Performance First Mindset */}
-          <div className="group rounded-2xl sm:rounded-[22px] bg-[#0E0F14]/90 border border-white/[0.07] hover:border-red-500/35 p-7 sm:p-9 transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-2xl backdrop-blur-sm">
+          <div className="group rounded-2xl sm:rounded-[22px] bg-[#0E0F14]/90 border border-white/[0.07] hover:border-red-500/35 p-5 sm:p-9 transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-2xl backdrop-blur-sm">
             <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-red-600/15 transition-all" />
 
             {/* Visual Graphic: Latency waveform / sine signal with illuminated peak */}
@@ -98,7 +98,7 @@ export const Capabilities = () => {
           </div>
 
           {/* Bento Card 3: Scalable Cloud Architecture */}
-          <div className="group rounded-2xl sm:rounded-[22px] bg-[#0E0F14]/90 border border-white/[0.07] hover:border-red-500/35 p-7 sm:p-9 transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-2xl backdrop-blur-sm">
+          <div className="group rounded-2xl sm:rounded-[22px] bg-[#0E0F14]/90 border border-white/[0.07] hover:border-red-500/35 p-5 sm:p-9 transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-2xl backdrop-blur-sm">
             <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-red-600/15 transition-all" />
 
             {/* Visual Graphic: Microservices chassis rack */}
@@ -131,7 +131,7 @@ export const Capabilities = () => {
           </div>
 
           {/* Bento Card 4: Business-Driven Decisions */}
-          <div className="group rounded-2xl sm:rounded-[22px] bg-[#0E0F14]/90 border border-white/[0.07] hover:border-red-500/35 p-7 sm:p-9 transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-2xl backdrop-blur-sm">
+          <div className="group rounded-2xl sm:rounded-[22px] bg-[#0E0F14]/90 border border-white/[0.07] hover:border-red-500/35 p-5 sm:p-9 transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-2xl backdrop-blur-sm">
             <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-red-600/15 transition-all" />
 
             {/* Visual Graphic: Dotted globe sphere with illuminated red horizon */}
