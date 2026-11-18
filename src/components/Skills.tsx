@@ -41,103 +41,87 @@ const skillCategories = [
 ];
 
 export const Skills = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="skills" ref={sectionRef} className="py-24 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="inline-block mb-4">
-            <span className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
-              Technical Expertise
-            </span>
+    <section id="skills" className="py-24 px-4 sm:px-6 md:px-12 border-t border-border/40">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="mb-14">
+          <div className="text-xs font-mono text-primary font-semibold tracking-wider uppercase mb-2">
+            // 02 &bull; Technical Competencies
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold">
-            Technical <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Skills</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+            Technical Stack &amp; Foundations
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            A comprehensive skillset built through hands-on experience with modern technologies and frameworks
+          <p className="text-muted-foreground mt-3 max-w-xl text-sm sm:text-base leading-relaxed">
+            Verified technical toolchain spanning systems programming, asynchronous APIs, relational &amp; NoSQL storage, and cloud infrastructure.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillCategories.map((category, index) => (
-            <div
-              key={category.title}
-              className={`group relative bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2 ${
-                isVisible ? "animate-slide-up" : "opacity-0"
-              }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Gradient top border */}
-              <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${category.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-              
-              {/* Gradient background on hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
-              
-              <div className="relative p-6">
-                <div className="flex items-start justify-between mb-6">
-                  <div className={`p-3 rounded-lg bg-gradient-to-br ${category.color} text-white shadow-lg`}>
-                    <category.icon className="w-5 h-5" />
+        {/* Technical Capabilities Matrix */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {skillCategories.map((category) => {
+            const Icon = category.icon;
+            return (
+              <div
+                key={category.title}
+                className="bg-card border border-border rounded-xl p-5 hover:border-primary/40 transition-colors flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-border/60">
+                    <div className="flex items-center gap-2.5">
+                      <div className="p-1.5 rounded bg-secondary text-primary">
+                        <Icon className="w-4 h-4" />
+                      </div>
+                      <h3 className="font-mono text-sm font-semibold text-foreground">
+                        {category.title}
+                      </h3>
+                    </div>
+                    <span className="text-xs font-mono text-muted-foreground">
+                      {category.skills.length} tools
+                    </span>
                   </div>
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold">
-                    {category.skills.length}
+
+                  <div className="flex flex-wrap gap-1.5">
+                    {category.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-2.5 py-1 rounded bg-secondary/70 border border-border/60 text-xs font-mono text-foreground/90 hover:border-primary/40 transition-colors"
+                      >
+                        {skill}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
-                <h3 className="text-lg font-semibold mb-4 group-hover:text-primary transition-colors">
-                  {category.title}
-                </h3>
-
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1.5 rounded-full text-xs font-medium bg-secondary border border-border group-hover:border-primary/50 group-hover:bg-primary/10 transition-all duration-300"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                <div className="mt-5 pt-3 border-t border-border/40 flex items-center justify-between text-[11px] font-mono text-muted-foreground">
+                  <span>Production verified</span>
+                  <span className="text-primary font-semibold">&bull; Active</span>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Summary stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {[
-            { label: "Programming Languages", value: "7+" },
-            { label: "Frameworks & Tools", value: "15+" },
-            { label: "Databases", value: "3+" },
-            { label: "Cloud Platforms", value: "2+" },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="bg-card border border-border rounded-lg p-4 text-center hover:border-primary/50 transition-all duration-300"
-            >
-              <div className="text-2xl font-bold text-primary mb-1">{stat.value}</div>
-              <div className="text-xs text-muted-foreground">{stat.label}</div>
-            </div>
-          ))}
+        {/* Engineering Philosophy Banner */}
+        <div className="mt-8 p-6 rounded-xl bg-secondary/20 border border-border/70 grid sm:grid-cols-3 gap-6 font-mono text-xs">
+          <div>
+            <div className="text-primary font-semibold mb-1">01 / Architecture First</div>
+            <p className="text-muted-foreground leading-relaxed">
+              Designing modular, decoupleable backend systems prioritizing throughput, reliability, and clean separation of concerns.
+            </p>
+          </div>
+          <div>
+            <div className="text-primary font-semibold mb-1">02 / Algorithmic Rigor</div>
+            <p className="text-muted-foreground leading-relaxed">
+              Applying exact algorithmic optimizations (graph debt reduction, CNN spatial heatmaps) to solve real domain bottlenecks.
+            </p>
+          </div>
+          <div>
+            <div className="text-primary font-semibold mb-1">03 / Continuous Delivery</div>
+            <p className="text-muted-foreground leading-relaxed">
+              Automated testing, containerized reproducible workflows, and verifiable observability from endpoint to dashboard.
+            </p>
+          </div>
         </div>
       </div>
     </section>

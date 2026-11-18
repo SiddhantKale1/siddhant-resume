@@ -1,5 +1,4 @@
 import { Navbar } from "@/components/Navbar";
-import { CustomCursor } from "@/components/CustomCursor";
 import { Hero } from "@/components/Hero";
 import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
@@ -10,9 +9,8 @@ import { Contact } from "@/components/Contact";
 const Index = () => {
   return (
     <>
-      <CustomCursor />
       <Navbar />
-      <div className="min-h-screen bg-background text-foreground">
+      <div className="min-h-screen bg-background text-foreground selection:bg-primary/20 selection:text-primary">
         <Hero />
         <Skills />
         <Projects />

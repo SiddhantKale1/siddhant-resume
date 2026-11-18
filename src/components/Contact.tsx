@@ -29,35 +29,30 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-28 px-4 sm:px-6 md:px-12 relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/5 rounded-full blur-[140px] pointer-events-none" />
-
-      <div className="max-w-6xl mx-auto relative z-10">
+    <section id="contact" className="py-24 px-4 sm:px-6 md:px-12 border-t border-border/40 relative">
+      <div className="max-w-6xl mx-auto">
         {/* Section Heading */}
-        <div className="text-center mb-16">
-          <div className="inline-block mb-4">
-            <span className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-medium">
-              Get in Touch
-            </span>
+        <div className="mb-14">
+          <div className="text-xs font-mono text-primary font-semibold tracking-wider uppercase mb-2">
+            // 05 &bull; Direct Communication
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
-            Let's <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Connect</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+            Get In Touch
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-sm sm:text-base">
-            Actively seeking entry-level Software Engineer roles, backend development opportunities, and technical collaborations.
+          <p className="text-muted-foreground mt-3 max-w-xl text-sm sm:text-base leading-relaxed">
+            Actively interviewing for full-time Software Engineer and Backend Developer roles starting 2027.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-10 items-start">
           {/* Left Column: Direct Contact Info */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-card/90 backdrop-blur-md border border-border rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl">
-              <h3 className="text-xl font-bold text-foreground">
-                Contact Information
+            <div className="bg-card border border-border rounded-xl p-6 sm:p-8 space-y-6">
+              <h3 className="text-lg font-bold text-foreground font-mono">
+                Direct Channels
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Whether you have an open engineering role, a question about my projects, or want to discuss technology, my inbox is always open.
+                Whether you are a recruiter discussing an open role, an engineering team member, or collaborating on open source, my inbox is always open.
               </p>
 
               <div className="space-y-4 pt-2">
@@ -225,14 +220,28 @@ export const Contact = () => {
         </div>
 
         {/* Footer */}
-        <div className="mt-20 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>
-            &copy; {new Date().getFullYear()} Siddhant Kale. Designed &amp; built with React, Vite, TypeScript &amp; Tailwind CSS.
-          </p>
+        <div className="mt-20 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-3">
+            <p>
+              &copy; {new Date().getFullYear()} Siddhant Kale &bull; React &bull; TypeScript &bull; Tailwind CSS
+            </p>
+            <a
+              href="https://top-agent-skills.com/skill/frontend-design"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center opacity-85 hover:opacity-100 transition-opacity"
+            >
+              <img
+                src="https://top-agent-skills.com/badge/frontend-design.svg"
+                alt="frontend-design — ranked #1 in Frontend &amp; UI on Top Agent Skills"
+                className="h-5"
+              />
+            </a>
+          </div>
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 text-primary hover:underline hover:text-primary-glow transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 text-primary hover:underline transition-colors cursor-pointer"
           >
             <span>Back to top</span>
             <ArrowUp className="w-3.5 h-3.5" />

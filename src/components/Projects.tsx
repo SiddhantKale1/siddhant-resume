@@ -78,124 +78,157 @@ const projects: Project[] = [
 ];
 
 export const Projects = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="projects" ref={sectionRef} className="py-28 px-4 sm:px-6 md:px-12 bg-secondary/20">
+    <section id="projects" className="py-24 px-4 sm:px-6 md:px-12 border-t border-border/40">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-block mb-4">
-            <span className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-medium">
-              Portfolio &amp; Engineering Work
-            </span>
+        {/* Editorial Section Header */}
+        <div className="mb-14">
+          <div className="text-xs font-mono text-primary font-semibold tracking-wider uppercase mb-2">
+            // 01 &bull; Featured Projects
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
-            Featured <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Projects</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+            Engineered Systems &amp; Applied AI
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-sm sm:text-base">
-            End-to-end applications demonstrating backend architecture, systems security, computer vision, and machine learning.
+          <p className="text-muted-foreground mt-3 max-w-2xl text-sm sm:text-base leading-relaxed">
+            Production-oriented software projects spanning deep learning medical vision, distributed telemetry ingestion, and algorithmic expense optimization.
           </p>
         </div>
 
-        {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => {
+        {/* Lead Flagship Project: SIEM Architecture */}
+        <div className="mb-10 bg-card border border-border rounded-xl p-6 sm:p-8 hover:border-primary/40 transition-colors">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-border/60">
+            <div>
+              <div className="flex items-center gap-2 mb-2 font-mono text-xs text-primary font-medium">
+                <Shield className="w-4 h-4" />
+                <span>Distributed Systems &bull; Cybersecurity Telemetry</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-foreground">
+                Security Information &amp; Event Management (SIEM)
+              </h3>
+            </div>
+
+            <a
+              href="https://github.com/SiddhantKale1/SIEM-Dashboard-security-information-event-mangement-"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary hover:bg-primary/10 text-foreground hover:text-primary text-xs font-mono font-medium border border-border transition-colors self-start lg:self-auto"
+            >
+              <Github className="w-4 h-4" />
+              <span>github.com/SiddhantKale1/SIEM</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
+
+          <div className="grid md:grid-cols-12 gap-8 pt-6">
+            <div className="md:col-span-7 space-y-4">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                Enterprise security observability and endpoint telemetry system designed to ingest, correlate, and analyze security events across distributed Linux and server environments in real time.
+              </p>
+              <ul className="space-y-2 text-xs sm:text-sm text-foreground/90 font-mono">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">&rarr;</span>
+                  <span>Lightweight Python/Linux agent collecting system telemetry, auth logs, and process activities.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">&rarr;</span>
+                  <span>FastAPI high-throughput backend with rule-based threat correlation &amp; anomaly alerting.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">&rarr;</span>
+                  <span>Interactive React &amp; Tailwind security operations dashboard with visual attack heatmaps.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="md:col-span-5 flex flex-col justify-between bg-secondary/30 border border-border/60 rounded-lg p-5">
+              <div>
+                <span className="text-xs font-mono text-muted-foreground uppercase tracking-wider block mb-3">
+                  Architecture Components
+                </span>
+                <div className="flex flex-wrap gap-1.5">
+                  {["FastAPI", "Python", "React", "TypeScript", "Linux Telemetry", "Tailwind CSS", "JWT Auth", "REST APIs"].map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-1 rounded bg-secondary text-xs font-mono text-foreground/90 border border-border/60"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="pt-4 mt-4 border-t border-border/40 flex items-center justify-between text-xs font-mono text-muted-foreground">
+                <span>Status: In Active Iteration</span>
+                <span className="text-emerald-400 font-semibold">Engineered</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Secondary Projects Grid (Resume Projects) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {projects.slice(0, 3).map((project) => {
             const Icon = project.icon;
             return (
               <div
                 key={project.title}
-                className={`group relative bg-card/90 backdrop-blur-sm border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1 flex flex-col justify-between ${
-                  isVisible ? "animate-slide-up" : "opacity-0"
-                }`}
-                style={{ animationDelay: `${index * 0.15}s` }}
+                className="bg-card border border-border rounded-xl p-6 hover:border-primary/40 transition-colors flex flex-col justify-between"
               >
-                {/* Top gradient highlight banner */}
-                <div className={`h-1.5 w-full bg-gradient-to-r ${project.gradient}`} />
-
-                <div className="p-6 sm:p-8 flex-1 flex flex-col">
-                  {/* Category and icon */}
+                <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-2">
-                      <div className={`p-2 rounded-lg bg-gradient-to-br ${project.gradient} text-white shadow-md`}>
-                        <Icon className="w-4 h-4" />
-                      </div>
-                      <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground font-semibold">
-                        {project.category}
-                      </span>
-                    </div>
-
+                    <span className="text-xs font-mono text-muted-foreground">
+                      {project.category}
+                    </span>
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-primary transition-colors p-1"
-                      aria-label="GitHub Repository"
+                      aria-label="GitHub Repo"
                     >
-                      <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      <ArrowUpRight className="w-4 h-4" />
                     </a>
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-bold text-foreground mb-3 leading-snug">
                     {project.title}
                   </h3>
 
-                  {/* Description */}
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-4">
                     {project.description}
                   </p>
 
-                  {/* Bullet points */}
-                  <ul className="space-y-2 mb-6 text-xs sm:text-sm text-foreground/80 flex-1">
-                    {project.bullets.map((bullet, bIdx) => (
-                      <li key={bIdx} className="flex items-start gap-2">
-                        <span className="text-primary mt-1 text-sm leading-none">&bull;</span>
+                  <ul className="space-y-2 mb-6 text-xs text-foreground/85">
+                    {project.bullets.map((bullet, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="text-primary mt-0.5 text-xs font-mono">&gt;</span>
                         <span>{bullet}</span>
                       </li>
                     ))}
                   </ul>
+                </div>
 
-                  {/* Tech stack tags */}
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6">
+                <div>
+                  <div className="flex flex-wrap gap-1.5 pt-4 border-t border-border/50">
                     {project.tech.map((t) => (
                       <span
                         key={t}
-                        className="px-2.5 py-1 rounded-md bg-secondary/80 border border-border/80 text-xs font-mono text-muted-foreground group-hover:border-primary/30 transition-colors"
+                        className="px-2 py-0.5 rounded bg-secondary text-[11px] font-mono text-muted-foreground"
                       >
                         {t}
                       </span>
                     ))}
                   </div>
 
-                  {/* Action buttons */}
-                  <div className="flex items-center gap-3 pt-4 border-t border-border/60">
+                  <div className="mt-4 pt-3 flex items-center justify-between text-xs font-mono">
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border bg-secondary/50 hover:bg-primary/10 hover:border-primary/50 text-xs sm:text-sm font-medium transition-all"
+                      className="text-primary hover:underline inline-flex items-center gap-1"
                     >
-                      <Github className="w-4 h-4 text-primary" />
-                      <span>View Source</span>
+                      <Github className="w-3.5 h-3.5" />
+                      <span>Source repository</span>
                     </a>
                   </div>
                 </div>
@@ -204,19 +237,21 @@ export const Projects = () => {
           })}
         </div>
 
-        {/* GitHub CTA */}
-        <div className="mt-16 text-center">
-          <p className="text-muted-foreground text-sm mb-4">
-            Want to see more code repositories and open-source contributions?
-          </p>
+        {/* GitHub Direct Link */}
+        <div className="mt-12 p-6 rounded-xl bg-secondary/30 border border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-center sm:text-left">
+            <h4 className="text-sm font-semibold text-foreground">Explore More Engineering Repositories</h4>
+            <p className="text-xs text-muted-foreground mt-0.5 font-mono">github.com/SiddhantKale1 &bull; Open Source Code &amp; Experiments</p>
+          </div>
           <a
             href="https://github.com/SiddhantKale1"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-primary/40 bg-card hover:bg-primary/10 text-primary font-medium text-sm transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-border hover:border-primary/50 text-foreground text-xs font-mono font-medium transition-colors"
           >
-            <Github className="w-4 h-4" />
-            <span>Visit @SiddhantKale1 on GitHub</span>
+            <Github className="w-4 h-4 text-primary" />
+            <span>Open GitHub Profile</span>
+            <ArrowUpRight className="w-3.5 h-3.5 text-muted-foreground" />
           </a>
         </div>
       </div>
