@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, FileDown, Github, Linkedin, Mail } from "lucide-react";
-import { Button } from "./ui/button";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,12 +14,11 @@ export const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
-    { name: "Education", href: "#education" },
-    { name: "Certifications", href: "#certifications" },
-    { name: "Contact", href: "#contact" },
+    { name: "Solutions", href: "#capabilities" },
+    { name: "Stack", href: "#stack" },
+    { name: "Milestones", href: "#milestones" },
+    { name: "Philosophy", href: "#philosophy" },
   ];
 
   const scrollTo = (href: string) => {
@@ -32,118 +30,75 @@ export const Navbar = () => {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border shadow-lg shadow-black/20 py-3"
-          : "bg-transparent py-5"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between">
-        {/* Brand Logo */}
+    <header className="fixed top-0 left-0 right-0 z-50 pt-5 px-6 sm:px-10 lg:px-14 pointer-events-none">
+      <div className="max-w-7xl mx-auto px-6 py-3 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md flex items-center justify-between pointer-events-auto">
+        {/* Brand Monogram */}
         <a
           href="#"
-          className="group flex items-center gap-2 text-xl font-bold tracking-tight text-foreground hover:text-primary transition-colors"
+          className="group flex items-center gap-2.5"
         >
-          <span className="w-9 h-9 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center text-primary font-mono text-sm font-bold group-hover:scale-105 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+          <span className="w-6 h-6 rounded-md bg-white text-black flex items-center justify-center font-bold text-xs tracking-tighter">
             SK
           </span>
-          <span className="hidden sm:inline">
-            Siddhant <span className="text-primary">Kale</span>
+          <span className="text-sm font-medium tracking-tight text-white group-hover:text-zinc-200 transition-colors">
+            Siddhant Kale
           </span>
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-1 bg-secondary/40 border border-border/50 rounded-full px-4 py-1.5 backdrop-blur-sm">
+        {/* Center Nav Links */}
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <button
               key={link.name}
               onClick={() => scrollTo(link.href)}
-              className="px-3.5 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-card/60 rounded-full transition-all duration-200"
+              className="text-xs font-normal text-zinc-300 hover:text-white transition-colors duration-150"
             >
               {link.name}
             </button>
           ))}
         </nav>
 
-        {/* Action Buttons */}
-        <div className="hidden sm:flex items-center gap-3">
-          <a
-            href="https://github.com/SiddhantKale1"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="p-2 text-muted-foreground hover:text-foreground hover:bg-card rounded-lg border border-transparent hover:border-border transition-all"
+        {/* Action Button: Let's Talk */}
+        <div className="hidden md:flex items-center gap-3">
+          <button
+            onClick={() => scrollTo("#contact")}
+            className="px-5 py-2 rounded-xl bg-white text-black font-semibold text-xs hover:bg-zinc-200 transition-all duration-200 shadow-md shadow-white/5 active:scale-95"
           >
-            <Github className="w-4 h-4" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/siddhant-kale-301807318/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="p-2 text-muted-foreground hover:text-foreground hover:bg-card rounded-lg border border-transparent hover:border-border transition-all"
-          >
-            <Linkedin className="w-4 h-4" />
-          </a>
-          <a
-            href="/Siddhant_Kale_Resume.pdf"
-            download="Siddhant_Kale_Resume.pdf"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300"
-          >
-            <FileDown className="w-4 h-4" />
-            <span>Resume</span>
-          </a>
+            Let's Talk
+          </button>
         </div>
 
-        {/* Mobile menu trigger */}
-        <div className="flex sm:hidden items-center gap-2">
-          <a
-            href="/Siddhant_Kale_Resume.pdf"
-            download="Siddhant_Kale_Resume.pdf"
-            className="p-2 rounded-lg bg-primary text-primary-foreground text-xs font-medium"
+        {/* Mobile menu button */}
+        <div className="flex md:hidden items-center gap-2">
+          <button
+            onClick={() => scrollTo("#contact")}
+            className="px-3.5 py-1.5 rounded-xl bg-white text-black font-semibold text-xs"
           >
-            <FileDown className="w-4 h-4" />
-          </a>
+            Let's Talk
+          </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-muted-foreground hover:text-foreground focus:outline-none"
-            aria-label="Toggle Menu"
+            className="p-2 text-zinc-400 hover:text-white focus:outline-none"
+            aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile dropdown menu */}
+      {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="sm:hidden bg-card/95 backdrop-blur-lg border-b border-border px-6 py-6 animate-fade-in">
-          <nav className="flex flex-col gap-3">
+        <div className="md:hidden mt-2 bg-[#0C0D12]/95 backdrop-blur-xl border border-white/10 rounded-2xl px-6 py-6 transition-all duration-200 pointer-events-auto">
+          <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <button
                 key={link.name}
                 onClick={() => scrollTo(link.href)}
-                className="text-left py-2 text-base font-medium text-foreground hover:text-primary transition-colors border-b border-border/40"
+                className="text-left text-sm font-medium text-zinc-400 hover:text-white transition-colors"
               >
                 {link.name}
               </button>
             ))}
-            <div className="flex gap-4 pt-4 mt-2">
-              <a
-                href="/Siddhant_Kale_Resume.pdf"
-                download="Siddhant_Kale_Resume.pdf"
-                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium"
-              >
-                <FileDown className="w-4 h-4" />
-                Download CV
-              </a>
-              <a
-                href="mailto:siddhantkalework@gmail.com"
-                className="p-2.5 rounded-lg border border-border bg-secondary text-foreground hover:text-primary"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
-            </div>
           </nav>
         </div>
       )}

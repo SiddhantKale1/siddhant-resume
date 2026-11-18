@@ -2,50 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 222 25% 6%;      /* #0B0D11 Deep obsidian slate */
-    --foreground: 210 20% 98%;      /* #F8FAFC Crisp slate */
+    --background: 240 12% 4%;       /* #08080A Pure Deep Luxury Dark */
+    --foreground: 0 0% 100%;        /* #FFFFFF Crisp White */
 
-    --card: 222 24% 10%;           /* #131722 Elevated surface */
-    --card-foreground: 210 20% 98%;
+    --card: 240 12% 7.5%;          /* #101116 Elevated Dark Glass Surface */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222 24% 10%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 240 12% 7.5%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 158 100% 45%;        /* #00E599 Terminal Emerald */
-    --primary-foreground: 222 47% 6%;
-    
-    --primary-glow: 160 100% 55%;
+    --primary: 0 84% 60%;          /* #EF4444 / #DC2626 Crimson / Ruby */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 0 92% 64%;
 
-    --secondary: 222 20% 15%;       /* #1E2430 Secondary surface */
-    --secondary-foreground: 210 20% 90%;
+    --secondary: 240 10% 12%;      /* #181920 */
+    --secondary-foreground: 240 5% 90%;
 
-    --muted: 222 18% 14%;
-    --muted-foreground: 215 16% 65%; /* #94A3B8 Balanced slate */
+    --muted: 240 10% 12%;
+    --muted-foreground: 240 5% 65%; /* #A1A1AA Sleek Slate */
 
-    --accent: 199 89% 48%;          /* #0EA5E9 Sky Blue */
+    --accent: 0 84% 50%;           /* #DC2626 */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 222 18% 18%;          /* #232B3A Precision border */
-    --input: 222 18% 18%;
-    --ring: 158 100% 45%;
+    --border: 240 8% 14%;          /* #1F2028 Precision Subdued Border */
+    --input: 240 8% 14%;
+    --ring: 0 84% 60%;
 
-    --radius: 0.5rem;
-    
-    /* Precision design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(158, 100%, 45%), hsl(199, 89%, 48%));
-    --gradient-card: linear-gradient(180deg, rgba(19, 23, 34, 0.9) 0%, rgba(13, 16, 24, 0.95) 100%);
-    --shadow-glow: 0 0 35px rgba(0, 229, 153, 0.15);
-    --shadow-card: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
-    --transition-smooth: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    --radius: 0.75rem;
+
+    --gradient-ruby: linear-gradient(135deg, hsl(0, 84%, 60%), hsl(340, 82%, 52%));
+    --gradient-card: linear-gradient(180deg, rgba(18, 18, 24, 0.85) 0%, rgba(12, 12, 16, 0.95) 100%);
   }
 }
 
@@ -55,93 +46,57 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    @apply bg-background text-foreground font-sans antialiased selection:bg-red-500/20 selection:text-red-400;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
 }
 
 @layer utilities {
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+  .squircle-ambient-hero {
+    background-image: 
+      radial-gradient(circle at 72% 38%, rgba(220, 38, 38, 0.32) 0%, rgba(153, 27, 27, 0.16) 38%, rgba(8, 8, 10, 0) 70%),
+      radial-gradient(circle at 18% 75%, rgba(185, 28, 28, 0.12) 0%, rgba(8, 8, 10, 0) 55%);
   }
-  
-  .animate-slide-up {
-    animation: slideUp 0.6s ease-out forwards;
+
+  .squircle-ambient-section {
+    background-image: 
+      radial-gradient(circle at 50% 10%, rgba(220, 38, 38, 0.15) 0%, rgba(8, 8, 10, 0) 65%);
   }
-  
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite;
+
+  .portrait-rim-glow {
+    filter: drop-shadow(0 0 25px rgba(220, 38, 38, 0.45)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.55));
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+  .animate-pulse-slow {
+    animation: pulseSlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
-  
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes glow {
+
+  @keyframes pulseSlow {
     0%, 100% {
-      box-shadow: 0 0 20px hsl(200, 100%, 50%, 0.5);
+      opacity: 0.85;
+      transform: scale(1);
     }
     50% {
-      box-shadow: 0 0 40px hsl(200, 100%, 50%, 0.8);
-    }
-  }
-  
-  @keyframes revealUp {
-    from {
-      opacity: 0;
-      transform: translateY(18px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+      opacity: 0.45;
+      transform: scale(1.03);
     }
   }
 
-  @keyframes scaleIn {
-    from {
-      opacity: 0;
-      transform: scale(0.96) translateY(12px);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
+  .animate-slide-from-left {
+    animation: slideFromLeft 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
-  .animate-reveal-up {
-    animation: revealUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  .animate-scale-in {
-    animation: scaleIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+  .animate-slide-from-right {
+    animation: slideFromRight 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   @keyframes slideFromLeft {
     0% {
       opacity: 0;
-      transform: translateX(-100px) scale(0.96);
+      transform: translateX(-80px) scale(0.96);
     }
     100% {
       opacity: 1;
@@ -152,19 +107,11 @@ All colors MUST be HSL.
   @keyframes slideFromRight {
     0% {
       opacity: 0;
-      transform: translateX(100px);
+      transform: translateX(80px);
     }
     100% {
       opacity: 1;
       transform: translateX(0);
     }
-  }
-
-  .animate-slide-from-left {
-    animation: slideFromLeft 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  .animate-slide-from-right {
-    animation: slideFromRight 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 }
